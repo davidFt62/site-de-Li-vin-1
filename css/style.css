@@ -1,0 +1,584 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: 'oldnewspapertype', sans-serif;
+    src: url('../assets/OldNewspaperTypes.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(244, 241, 238);
+}
+
+
+a,
+.bottom_main__news,
+.bottom_main__event,
+.contact {
+    cursor: pointer;
+}
+
+/* une barre de navigation avec flex, un coté gauche avec logo représentnt 50% de l'espace et un menu burger représentant 50% du reste de l'espace */
+.nav__left_right {
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    width: 100%;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+}
+
+/* Partie gauche de la nav avec le logo */
+.nav_span__left {
+    width: 50%;
+    display: flex;
+}
+
+.nav__logo {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 15%;
+    left: 3%;
+}
+
+/* Partie droite de la nav */
+.nav_span__right {
+    width: 50%;
+}
+
+/* navigation droite responsive en 1280px */
+.navigation__items_inline {
+    display: none;
+}
+
+/* menu burger */
+#menuToggle {
+    width: auto;
+    display: block;
+    position: relative;
+    top: 30px;
+    right: -70%;
+    padding: auto;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: tomato;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-1px, 2.7px);
+    background: #ffffff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    margin: -100px 0 0 -75%;
+    padding: 50px;
+    padding-top: 125px;
+    color: #ffffff;
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-size: 1.2rem;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+
+
+/* Bannière image + titre puls + lien bienvenue à liévin + encart liens "accés direct" */
+
+.top__main {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.main__banner {
+    width: 100%;
+    height: 50vh;
+    margin: 90px auto 0 auto;
+
+    background: url(../assets/Ma\ ville\ Liévin\ vue\ du\ ciel.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner__title {
+    font-family: 'oldnewspapertype', sans-serif;
+    font-size: 1.2rem;
+    width: auto;
+    height: 40px;
+    margin: -10px auto 0px auto;
+    color: #ffffff;
+    font-weight: 900;
+    -webkit-text-stroke: 1px rgb(29, 91, 150);
+}
+
+
+.banner__link {
+    margin: 50px auto;
+}
+
+.banner_link__text {
+    width: 190px;
+    height: 50px;
+    margin: 20px auto 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    border-radius: 10px;
+    border: 1px solid white;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 800;
+}
+
+.banner_link_text__arrow {
+    margin-left: 15px;
+}
+
+.banner__href {
+    text-decoration: none;
+
+}
+
+.top-main__square {
+    width: 60%;
+    height: auto;
+    padding: 20px;
+    margin: -110px auto auto auto;
+    background-color: #ffffff;
+    box-shadow: #232323;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 .5em .5em #0d7c9d, inset 0 0 0.5em .05em #487ece;
+
+}
+
+.top-main__square a {
+    text-decoration: none;
+    width: 150px;
+}
+
+.top_main__link_lievin {
+    margin-top: 20px;
+}
+
+.link_lievin__title h2 {
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 800;
+    color: #106d89;
+    text-decoration: underline;
+    padding-bottom: 20px;
+}
+
+.top_main__square_text {
+    width: 155px;
+    height: 50px;
+    padding-top: 10px;
+    margin: auto;
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    border-radius: 10px;
+    border: 2px solid white;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< midle__main >>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* section calendrier et météo */
+
+
+
+.calendar_weather {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px auto;
+    padding: auto;
+}
+
+.calendar {
+    margin-bottom: 40px;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< bottom Main>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* section évènements et actu/articles */
+
+.bottom_main__news_event {
+    width: 95%;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(#2eadcd, #97e3f6);
+    border-radius: 20px;
+    box-shadow: 0 .5em .5em #0d7c9d, inset 0 0 0.5em .05em #487ece;
+}
+
+
+.bottom__main a {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Evènements */
+.bottom_main__event {
+    width: 300px;
+    height: 169px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background: url(../assets/photoevenements.jpg) no-repeat;
+    background-size: cover;
+
+}
+
+.bottom_main__event h3,
+.bottom_main__news h3 {
+    -webkit-text-stroke: 1px rgb(75, 75, 211);
+    color: #2eadcd;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 800;
+    font-size: 1.9rem;
+}
+
+.bottom_main__news {
+
+    width: 300px;
+    height: 169px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background: url(../assets/hotel-de-ville-lievin-1-854x534.jpg) no-repeat;
+    background-size: cover;
+}
+
+
+.bottom_main__coordon_contact {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px auto 40px auto;
+
+}
+
+.coordon__blason {
+    width: 100px;
+    height: 121px;
+    margin: 50px auto 0px auto;
+    background: url(../assets/blason.png) no-repeat;
+    background-size: 100%;
+}
+
+.coordon_adress__text {
+    width: auto;
+    height: auto;
+    margin: 20px auto 0px auto;
+    color: #170454;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.contact {
+    width: auto;
+    height: 50px;
+    margin: 20px auto 0px auto;
+    padding-top: 2px;
+    text-align: center;
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    border-radius: 50px;
+    border: 1px solid white;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.coordon_contact__horaire {
+    width: auto;
+    height: auto;
+    margin: 20px auto 10px auto;
+    color: #170454;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.footer__mention_copyrit {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(#2eadcd, #106d89);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+}
+
+.mention {
+    height: auto;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.copyrit {
+    height: auto;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+
+            /* <<<<<<<<<<<<<<<<<<<<<<<<<<<< responsive 1280px X 800px >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+@media screen and (min-width: 912px) {
+
+    /* Partie droite de la nav passage en row et ajout fond en blanc */
+    .nav_span__right {
+        width: 90%;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* redimensionnement de la nav */
+    .navigation__items_inline {
+        display: block;
+        width: 900px;
+        margin-top: 30px;
+    }
+
+
+    /* liens de la nav droite alignement des éléments et disparition menu burger */
+    .menu1280px {
+
+        color: #106d89;
+        list-style: none;
+        text-decoration: none;
+        font-size: 2.2rem;
+        font-weight: 900;
+    }
+
+    /* passage des lien de la nav en ligne (row) */
+    #menu1280px {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /* suppression soulignements des liens */
+    a {
+        text-decoration: none;
+    }
+
+    /* disparition du menu burger en format >= 1280px */
+    #menuToggle {
+        display: none;
+    }
+
+
+    /* <<<<<<<<<<<<<<<<<<<<<<<< partie du top main, encadré pour la section accés directs >>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+    /* redimensionnement de la div contenant la bannière (image lièvin titre ville de liévin et lien en savoir plus) */
+    .top-main__square {
+        width: 90%;
+        height: auto;
+    }
+
+    /* redimensionnement du titre ville de liévin */
+    .banner__title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    /* redimensionnement texte du lien en savoir plus */
+    .banner__link {
+        margin-bottom: 50px;
+    }
+
+    /* top_main paasage en row des éléménts et alignement du titre accés direct au milieu */
+
+    /* centrage et dimensionnnement titre accés direct */
+    .link_lievin_title__h2 {
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .top_main__directaccess {
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 40px;
+    }
+
+    
+    /* <<<<<<<<<<<<<<<<< bottom_main Evènements Actu/Articles format 1280px X 800px flex-direction row >>>>>>>>>>>>> */
+
+
+    .bottom_main__news_event {
+        display: flex;
+        align-items: center;
+    }
+
+    /* redimensionnemnent de la div contenant les liens avec images */
+    .bottom_main__event,
+    .bottom_main__news {
+        width: 500px;
+        height: 269px;
+    }
+
+    /* titres des éléments plus gros */
+    .bottom_main__event h3,
+    .bottom_main__news h3 {
+        font-size: 3rem;
+    }
+}
