@@ -1,0 +1,411 @@
+@font-face {
+    font-family: 'OldNewspaperType';
+    src: url('../assets/Fonts/OldNewspaperTypes.ttf') format('truetype');
+
+}
+
+body {
+
+    margin: 0%;
+    padding: 0%;
+}
+
+.entete {
+
+    font-family: 'OldNewspaperType';
+    height: 100px;
+    background: linear-gradient(#3AB9D9, #FFFFFF);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    column-count: 1;
+    margin: 0%;
+    padding: 0%;
+    width: auto;
+
+}
+
+.enteteup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.burger {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    margin-left: 83%;
+}
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: 30px;
+    right: 0%;
+    padding: auto;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+    color: tomato;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 6;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 3px;
+    z-index: 6;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-1px, 2.7px);
+    background: #ffffff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+
+    position: absolute;
+    right: -70%;
+    height: auto;
+    width: 120px;
+    padding: 20px;
+    margin-top: -100px;
+    margin-right: 50%;
+    margin-left: 0%;
+    padding-top: 125px;
+    color: #ffffff;
+    background: linear-gradient(#106d89, #2eadcd, #97e3f6);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(200%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    z-index: 5;
+}
+
+
+
+#menu li {
+    padding: 10px 0;
+    font-size: 22px;
+    color: #ffffff;
+    font-family: 'oldnewspapertype', sans-serif;
+    font-size: 1.2rem;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+.logo {
+
+    margin: 0%;
+    padding: 0%;
+    height: 60px;
+    width: 60px;
+}
+
+
+.titre {
+
+    height: 60px;
+    text-align: center;
+    font-size: 15px;
+    margin: 0%;
+    padding: 0%;
+    margin-right: 35%;
+
+}
+
+.titre h1 {
+
+    margin: 0%;
+    padding: 0%;
+
+}
+
+.barremenu {
+
+
+    display: flex;
+    justify-items: flex-start;
+    justify-content: space-around;
+    height: 40px;
+    margin: 0%;
+    padding: 0%;
+
+
+}
+
+
+.menu1,
+.menu2,
+.menu3,
+.menu4,
+.menu5 {
+
+
+    font-size: 6px;
+    height: 38px;
+    width:20%;
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+    box-shadow: 5px 5px 5px #3AB9D9;
+
+
+}
+
+.menu1 a,
+.menu2 a,
+.menu3 a,
+.menu4 a,
+.menu5 a {
+
+    text-decoration: none;
+    color: black;
+}
+
+.menu1 a:hover {
+    color: black;
+}
+
+.menu2 a:hover {
+    color: black;
+}
+
+.menu3 a:hover {
+    color: black;
+}
+
+.menu4 a:hover {
+    color: black;
+}
+
+.menu5 a:hover {
+    color: black;
+}
+
+
+.menu5 {
+    font-size: 7px;
+}
+
+
+#searchbar {
+
+    width: 375px;
+    height: 25px;
+    margin: 30px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formulaire {
+
+    display: inline-block;
+}
+
+.formulaire .champ {
+    width: 200px;
+    height: 15px;
+    border: #3AB9D9 solid 2px;
+}
+
+
+.formulaire .bouton {
+    background-image: url(../Image/Sans\ titre.png);
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+}
+
+.corps {
+
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.eco h1,
+.pol h1,
+.cul h1,
+.adm h1,
+.faitdiv h1 {
+    color: #3AB9D9;
+    border-bottom: 1px solid #3AB9D9;
+    font-size: 12px;
+
+
+}
+
+.Arti {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: 5px 5px 5px #3AB9D9;
+    margin: 30px;
+    border: 2px solid #3AB9D9;
+    background-image: linear-gradient(90deg, #3ab9d94d 20%, #FFFFFF 60%, #3ab9d94D 100%);
+    /* background-image: linear-gradient(90deg,#3ab9d94d, #FFFFFF); */
+    transition: 1s;
+    background-size: 200% auto;
+
+
+}
+
+.Arti a {
+    text-decoration: #3AB9D9;
+}
+
+
+.Arti:hover {
+    background-position: right center;
+    transform: scale(0.95);
+    translate: 0% -10%;
+    /* background-image: linear-gradient(90deg, #FFFFFF, #3ab9d94D); */
+
+}
+
+
+
+.titrar {
+
+    margin: 7px;
+    font-family: 'Source Code Pro', monospace;
+    color: #3AB9D9;
+    font-size: 8px;
+
+}
+
+.paraccroche {
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px;
+    color: #3AB9D9;
+    margin: 10%;
+    padding: 0;
+
+
+}
+
+.corpsarti {
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    color: #3AB9D9;
+    width: auto;
+    height: auto;
+    margin: 10%;
+    padding: 0%;
+    text-indent: 10px;
+    text-align: justify;
+    position: relative;
+}
+
+.imgarti1 {
+    float: left;
+    margin: 5px;
+
+
+
+}
+
+.imgarti2 {
+    float: right;
+    margin: 5px;
+
+}
+
+.baspage{
+
+    margin-left: 10%;
+}
+
+.baspage a {
+
+    text-decoration: none;
+}
+
+.baspage a:hover {
+
+    color: red;
+}

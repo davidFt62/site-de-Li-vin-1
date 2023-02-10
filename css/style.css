@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'oldnewspapertype', sans-serif;
-    src: url('../assets/OldNewspaperTypes.ttf') format('truetype');
+    src: url('../assets/Fonts/OldNewspaperTypes.ttf') format('truetype');
 }
 
 body {
@@ -25,6 +25,7 @@ a,
 .bottom_main__event,
 .contact {
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* une barre de navigation avec flex, un coté gauche avec logo représentnt 50% de l'espace et un menu burger représentant 50% du reste de l'espace */
@@ -87,10 +88,6 @@ a,
     text-decoration: none;
     color: #232323;
     transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-    color: tomato;
 }
 
 #menuToggle input {
@@ -208,7 +205,7 @@ a,
     height: 50vh;
     margin: 90px auto 0 auto;
 
-    background: url(../assets/Ma\ ville\ Liévin\ vue\ du\ ciel.jpg) no-repeat;
+    background: url(../assets/Image/Ma\ ville\ Liévin\ vue\ du\ ciel.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -360,7 +357,7 @@ a,
     justify-content: center;
     text-align: center;
     margin: auto;
-    background: url(../assets/photoevenements.jpg) no-repeat;
+    background: url(../assets/Image/photoevenements.jpg) no-repeat;
     background-size: cover;
 
 }
@@ -383,7 +380,7 @@ a,
     justify-content: center;
     text-align: center;
     margin: auto;
-    background: url(../assets/hotel-de-ville-lievin-1-854x534.jpg) no-repeat;
+    background: url(../assets/Image/hotel-de-ville-lievin-1-854x534.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -403,7 +400,7 @@ a,
     width: 100px;
     height: 121px;
     margin: 50px auto 0px auto;
-    background: url(../assets/blason.png) no-repeat;
+    background: url(../assets//Image/blason.png) no-repeat;
     background-size: 100%;
 }
 
@@ -419,10 +416,10 @@ a,
 }
 
 .contact {
-    width: auto;
-    height: 50px;
+    width: 200px;
+    height: 40px;
     margin: 20px auto 0px auto;
-    padding-top: 2px;
+    padding-top: 20px;
     text-align: center;
     background: linear-gradient(#106d89, #2eadcd, #97e3f6);
     border-radius: 50px;
@@ -430,7 +427,7 @@ a,
     color: #ffffff;
     font-family: 'oldnewspapertype', sans-serif;
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .coordon_contact__horaire {
@@ -474,7 +471,7 @@ a,
 }
 
 
-            /* <<<<<<<<<<<<<<<<<<<<<<<<<<<< responsive 1280px X 800px >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<< responsive 1280px X 800px >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 @media screen and (min-width: 912px) {
 
@@ -560,7 +557,7 @@ a,
         margin-bottom: 40px;
     }
 
-    
+
     /* <<<<<<<<<<<<<<<<< bottom_main Evènements Actu/Articles format 1280px X 800px flex-direction row >>>>>>>>>>>>> */
 
 
